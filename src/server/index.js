@@ -47,6 +47,10 @@ app.post('/data', (req, res, next)=>{
         'text':req.body.text
     }, function(error, response){
         console.log(response);
-        res.send(response)
+        if(!error)
+            res.send(response);
+        else{
+            console.log(error);
+        }
     });
 })
